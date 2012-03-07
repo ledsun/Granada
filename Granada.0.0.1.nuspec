@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>0.0.1</version>
+    <authors>ledsun</authors>
+    <owners />
+    <licenseUrl>http://www.opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/ledsun/Granada</projectUrl>
+    <dependencies>
+      <dependency id="NUnit" version="2.6.0" />
+    </dependencies>
+    <id>Granada</id>
+    <title>Granada WebHelper</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Granada helps accessing values in Session and Redirecting to pages with querystrings.</description>
+    <summary>Granada is WebHelper for ASP.NET WebForm</summary>
+  </metadata>
+  <files>
+    <file src="..\Granada\Granada\bin\Release\Granada.dll" target="lib\Granada.dll" />
+  </files>
+</package>
