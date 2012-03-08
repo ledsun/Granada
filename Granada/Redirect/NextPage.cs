@@ -62,6 +62,19 @@ namespace Ledsun.Granada.Redirect
         }
 
         /// <summary>
+        /// keyを指定して値を設定します。
+        ///  同じkeyに二回設定したら上書きされます。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="val"></param>
+        /// <returns>メソッドチェーン対応で自分自身を返します。</returns>
+        public NextPage AddQuery(string key, int val)
+        {
+            _params[key] = val.ToString();
+            return this;
+        }
+
+        /// <summary>
         /// リクエストURLのクエリストリングから指定したkeyの値を取ってきて設定します。
         /// </summary>
         /// <param name="key">値をコピーしたいクエリストリングのkey</param>
