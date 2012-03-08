@@ -33,10 +33,10 @@ namespace Ledsun.Granada.Redirect
             _path = new Path(path);
         }
 
+        #region AddQueryメソッド
         /// <summary>
         /// keyを指定して値を設定します。
         ///  同じkeyに二回設定したら上書きされます。
-        ///  メソッドチェーンにするため自分自身を返したいのでインデクサとしては実装しません。
         /// </summary>
         /// <param name="key"></param>
         /// <param name="val"></param>
@@ -50,7 +50,6 @@ namespace Ledsun.Granada.Redirect
         /// <summary>
         /// keyを指定して値を設定します。
         ///  同じkeyに二回設定したら上書きされます。
-        ///  メソッドチェーンにするため自分自身を返したいのでインデクサとしては実装しません。
         /// </summary>
         /// <param name="key"></param>
         /// <param name="val"></param>
@@ -73,6 +72,20 @@ namespace Ledsun.Granada.Redirect
             _params[key] = val.ToString();
             return this;
         }
+
+        /// <summary>
+        /// keyを指定して値を設定します。
+        ///  同じkeyに二回設定したら上書きされます。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="val"></param>
+        /// <returns>メソッドチェーン対応で自分自身を返します。</returns>
+        public NextPage AddQuery(string key, uint val)
+        {
+            _params[key] = val.ToString();
+            return this;
+        }
+        #endregion
 
         /// <summary>
         /// リクエストURLのクエリストリングから指定したkeyの値を取ってきて設定します。
