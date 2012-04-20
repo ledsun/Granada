@@ -1,4 +1,4 @@
-namespace Ledsun.Granada.Session
+namespace Granada.Session
 {
     /// <summary>
     /// セッション操作用のクラス

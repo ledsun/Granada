@@ -1,6 +1,6 @@
 using System.Web;
 
-namespace Ledsun.Granada.Session
+namespace Granada.Session
 {
     /// <summary>
     /// 型指定してセッションにアクセスします。

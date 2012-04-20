@@ -1,6 +1,6 @@
 using System;
 
-namespace Ledsun.Granada.Session
+namespace Granada.Session
 {
     /// <summary>
     /// セッション未設定の場合に使用。

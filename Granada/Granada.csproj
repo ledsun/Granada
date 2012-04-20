@@ -45,6 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Redirect\Path.cs" />
+    <Compile Include="Redirect\QueryParams.cs" />
+    <Compile Include="Util\NameValueCollectionHelpers.cs" />
+    <Compile Include="Request\RequestHelper.cs" />
+    <Compile Include="UI\FindControlExtentions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Redirect\NextPage.cs" />
     <Compile Include="Session\SessionHelper.cs" />
