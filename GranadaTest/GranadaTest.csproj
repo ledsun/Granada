@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NextPageTest.cs" />
-    <Compile Include="PathTest.cs" />
+    <Compile Include="StringQueryStringExtentionsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryParamsTest.cs" />
   </ItemGroup>

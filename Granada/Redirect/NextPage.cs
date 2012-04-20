@@ -15,10 +15,10 @@ namespace Granada.Redirect
         /// <summary>
         /// 生成するURLのPATH
         /// </summary>
-        private readonly Path _path;
+        private readonly string _path;
 
         /// <summary>
-        /// クエリストリングにするkey-valの組み合わせ
+        /// クエリストリングとして付加するkey-valの組み合わせ
         /// </summary>
         private readonly QueryParams _params = new QueryParams();
 
@@ -28,7 +28,7 @@ namespace Granada.Redirect
         /// <param name="path">パス文字列。http://example.com/index.htmlや~/index.htmlや./index.htmlと指定できます。</param>
         public NextPage(string path)
         {
-            _path = new Path(path);
+            _path = path;
         }
 
         #region AddQueryメソッド
