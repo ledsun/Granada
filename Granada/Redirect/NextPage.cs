@@ -1,16 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Web;
-using NUnit.Framework;
+﻿using System.Web;
 
 namespace Granada.Redirect
 {
     /// <summary>
     /// クエリストリング付URLへ遷移するためのクラス
     /// 使用例
-    ///  var n = New NextPage("http://example.com/index.html")
-    ///  n.AddQuery(key, val).Go()
+    ///  var n = New NextPage("http://example.com/index.html");
+    ///  n.AddQuery(key, val).Go();
     /// 結果
-    ///  Response.Redirect(http://example.com/index.html?key=val)
+    ///  Response.Redirect(http://example.com/index.html?key=val);
     /// </summary>
     public class NextPage
     {
@@ -99,6 +97,15 @@ namespace Granada.Redirect
         }
 
         /// <summary>
+        /// 指定したURLへ遷移します。
+        /// </summary>
+        public void Go()
+        {
+            HttpContext.Current.Response.Redirect(ToString());
+        }
+
+        #region 文字列化
+        /// <summary>
         /// コンストラクタで指定したパスにクエリストリングを付けた文字列を作成します。
         /// </summary>
         /// <returns>次のような文字列を返します。入力時のパス部分は変更しません。http://example.com/index.html?key1=val1&amp;key2=val2</returns>
@@ -116,13 +123,6 @@ namespace Granada.Redirect
         {
             return val.ToString();
         }
-
-        /// <summary>
-        /// 指定したURLへ遷移します。
-        /// </summary>
-        public void Go()
-        {
-            HttpContext.Current.Response.Redirect(ToString());
-        }
+        #endregion
     }
 }
