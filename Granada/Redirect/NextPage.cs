@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using System.Collections.Generic;
 
 namespace Granada.Redirect
 {
@@ -20,7 +21,7 @@ namespace Granada.Redirect
         /// <summary>
         /// クエリストリングとして付加するkey-valの組み合わせ
         /// </summary>
-        private readonly QueryParams _params = new QueryParams();
+        private readonly Dictionary<string, string> _params = new Dictionary<string, string>();
 
         /// <summary>
         /// 
@@ -111,7 +112,7 @@ namespace Granada.Redirect
         /// <returns>次のような文字列を返します。入力時のパス部分は変更しません。http://example.com/index.html?key1=val1&amp;key2=val2</returns>
         public override string ToString()
         {
-            return _path.AddQueryString(_params.QueryString);
+            return _params.MakeQueryString().InsertPath(_path);
         }
 
         /// <summary>

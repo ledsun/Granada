@@ -9,7 +9,7 @@ namespace Granada.Redirect
     /// <summary>
     /// クエリストリング生成用辞書
     /// </summary>
-    class QueryParams : Dictionary<string, string>
+    static class QueryParams 
     {
         /// <summary>
         /// 設定したパラメータからクエリストリング文字列を作ります。
@@ -17,19 +17,12 @@ namespace Granada.Redirect
         /// valにURLで使えない文字列が入っていた場合、そのままResponse.Redirectに入れるとURLエンコードされます。
         /// valの値はすべてURLエンコードして返します。
         /// </summary>
-        public string QueryString
+        public static string MakeQueryString(this Dictionary<string, string> dic)
         {
-            get
-            {
-                var s = "";
-                foreach (string key in Keys)
-                {
-                    if (!string.IsNullOrEmpty(s))
-                        s += "&";
-                    s += key + "=" + HttpUtility.UrlEncode(this[key]);
-                }
-                return s;
-            }
+            return string.Join(
+                "&",
+                dic.Select(kv => kv.Key + "=" + HttpUtility.UrlEncode(kv.Value))
+            );
         }
     }
 }

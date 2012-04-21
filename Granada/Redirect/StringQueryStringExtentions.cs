@@ -7,13 +7,30 @@ namespace Granada.Redirect
 {
     static class StringQueryStringExtentions
     {
-        public static string AddQueryString(this string _path, string val)
+        /// <summary>
+        /// パス文字列の後ろにクエリストリング文字列を付けます
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static string AppendQueryString(this string path, string val)
         {
-            return Bond(_path) + val;
+            return Bond(path) + val;
         }
 
         /// <summary>
-        /// URLにクエリストリングを結合するため接続子を返します。
+        /// クエリストリング文字列の前にパス文字列を付けます。
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static string InsertPath(this string val, string path)
+        {
+            return Bond(path) + val;
+        }
+
+        /// <summary>
+        /// パスとクエリストリングを結合するため接続子を返します。
         /// </summary>
         /// <returns></returns>
         private static string Bond(string _path)
