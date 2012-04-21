@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace GranadaTest
 {
     [TestClass]
-    public class QueryParamsTest
+    public class DictionaryQueryParamsExtentionsTest
     {
         [TestMethod]
         public void クエリストリングを生成します()

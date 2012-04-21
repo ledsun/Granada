@@ -9,7 +9,7 @@ namespace Granada.Redirect
     /// <summary>
     /// クエリストリング生成用辞書
     /// </summary>
-    static class QueryParams 
+    static class DictionaryQueryParamsExtentions 
     {
         /// <summary>
         /// 設定したパラメータからクエリストリング文字列を作ります。
