@@ -112,7 +112,10 @@ namespace Granada.Redirect
         /// <returns>次のような文字列を返します。入力時のパス部分は変更しません。http://example.com/index.html?key1=val1&amp;key2=val2</returns>
         public override string ToString()
         {
-            return _params.MakeQueryString().InsertPath(_path);
+            var queryString = _params.MakeQueryString();
+            return string.IsNullOrEmpty(queryString)
+                ? _path.ToString()
+                : queryString.InsertPath(_path);
         }
 
         /// <summary>

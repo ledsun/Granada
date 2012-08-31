@@ -8,6 +8,14 @@ namespace GranadaTest
     public class NextPageTest
     {
         [TestMethod]
+        public void クエリパラメータなし()
+        {
+            var n = new NextPage("index.html");
+
+            Assert.AreEqual<string>("index.html", n.ToString());
+        }
+
+        [TestMethod]
         public void クエリパラメータの追加()
         {
             var n = new NextPage("index.html?aaa");
