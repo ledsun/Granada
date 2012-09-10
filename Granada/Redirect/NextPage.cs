@@ -29,7 +29,16 @@ namespace Granada.Redirect
         /// <param name="path">パス文字列。http://example.com/index.htmlや~/index.htmlや./index.htmlと指定できます。</param>
         public NextPage(string path)
         {
-            _path = path;
+            if (HttpContext.Current == null)
+            {
+                _path = path;
+            }
+            else
+            {
+                //チルダを仮想ディレクトリに置き換えます。
+                var dir = HttpContext.Current.Request.ApplicationPath;
+                _path = path.Replace("~/", dir == "/" ? dir : dir + "/");
+            }
         }
 
         #region AddQueryメソッド
